@@ -28,12 +28,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Zhelyazlo777\\LaravelSimpleMapper\\": "src"
+            "Zhelyazko777\\LaravelSimpleMapper\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Zhelyazlo777\\LaravelSimpleMapper\\Tests\\": "tests"
+            "Zhelyazko777\\LaravelSimpleMapper\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -46,7 +46,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Zhelyazlo777\\LaravelSimpleMapper\\SimpleMapperServiceProvider"
+                "Zhelyazko777\\LaravelSimpleMapper\\SimpleMapperServiceProvider"
             ]
         }
     },

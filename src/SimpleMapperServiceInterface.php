@@ -1,6 +1,6 @@
 <?php
 
-namespace Zhelyazlo777\LaravelSimpleMapper;
+namespace Zhelyazko777\LaravelSimpleMapper;
 
 interface SimpleMapperServiceInterface
 {
