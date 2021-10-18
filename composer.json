@@ -16,8 +16,7 @@
         }
     ],
     "require": {
-        "php": "^8.0",
-        "illuminate/contracts": "^8.37"
+        "php": "^8.0"
     },
     "require-dev": {
         "nunomaduro/collision": "^5.3",
@@ -42,13 +41,6 @@
     },
     "config": {
         "sort-packages": true
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Zhelyazko777\\LaravelSimpleMapper\\SimpleMapperServiceProvider"
-            ]
-        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
