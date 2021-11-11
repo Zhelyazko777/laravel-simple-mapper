@@ -4,7 +4,7 @@ namespace Zhelyazko777\LaravelSimpleMapper;
 
 class SimpleMapper
 {
-    public static function map(object $source, object $destination): object
+    public static function map(object $source, object $destination, array $customResolvers = []): object
     {
         $sourceGetterNames = array_map(
             fn ($getter) => lcfirst(preg_replace('/^get/', '', $getter)),
@@ -21,10 +21,14 @@ class SimpleMapper
                 fn ($m) => str_starts_with($m, 'set')
             )
         );
+
         foreach ($destinationSetterNames as $setter)
         {
-            if (in_array($setter, $sourceGetterNames)) {
-                $setterFullName = 'set'.ucfirst($setter);
+            $setterFullName = 'set'.ucfirst($setter);
+            if (array_key_exists($setter, $customResolvers)) {
+                $resolvedValue = $customResolvers[$setter]($source, $destination);
+                $destination->{$setterFullName}($resolvedValue);
+            } else if (in_array($setter, $sourceGetterNames)) {
                 $getterFullName = 'get'.ucfirst($setter);
                 $destination->{$setterFullName}($source->{$getterFullName}());
             }
